@@ -1,0 +1,23 @@
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+int main() {
+    int n;
+    std::cin >> n;
+    std::vector<std::string> lines;
+    lines.reserve(n);
+    std::string s;
+    std::getline(std::cin, s);
+    for (int i = 0; i < n; ++i) {
+        std::getline(std::cin, s);
+        lines.push_back(s);
+    }
+    int k;
+    std::cin >> k;
+    for (size_t i = 0; i < k; ++i) {
+        size_t index = lines.size() - 1 - i;
+        std::cout << index + 1 << " " << lines[index] << std::endl;
+    }
+}
