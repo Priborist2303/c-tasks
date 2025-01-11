@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+int main() {
+    using std::cout;
+    using std::endl;
+    using namespace std::literals;
+
+    std::vector<std::string> tens_names
+        = {"twenty"s, "thirty"s, "forty"s, "fifty"s, "sixty"s, "seventy"s, "eighty"s, "ninety"s};
+
+    std::vector<std::string> num_names
+        = {"zero"s,     "one"s,     "two"s,     "three"s,     "four"s,     "five"s,    "six"s,
+           "seven"s,    "eight"s,   "nine"s,    "ten"s,       "eleven"s,   "twelve"s,  "thirteen"s,
+           "fourteen"s, "fifteen"s, "sixteen"s, "seventeen"s, "eighteen"s, "nineteen"s};
+    int number;
+    std::cin >> number;
+    
+    if (number > 19){
+      int units = number % 10; 
+      int tens = number / 10; //20 -2  
+      cout << tens_names [tens-2] << (units != 0 ?  "-" + num_names[units] : "") << endl;
+    } else {
+         cout << num_names [number] << endl;
+        
+    }
+    // Вычислим единицы и десятки как остаток и частное:
+
+    // Выведите число, используя векторы, которые даны выше.
+    // Если число меньше 20, то выведите элемент из num_names.
+    // Иначе, если единицы равны нулю, выведите элемент tens_names.
+    // Иначе выведите через дефис значения из tens_names и num_names.
+}
